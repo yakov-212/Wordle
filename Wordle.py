@@ -13,7 +13,11 @@ def dots():
 
 def prompt(prompt):
     while True:
-        word = input(f"{prompt} a five letter word: ")
+        try:
+            word = input(f"{prompt} a five letter word: ")
+        except ValueError:
+            print("Make sure there are no numbers")
+            continue
         if len(word) == 5:
             break
         print("only enter five letter words")
